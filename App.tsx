@@ -1,14 +1,14 @@
 
 import React, { useState, useEffect, createContext, useContext } from 'react';
 import { HashRouter, Routes, Route, Link, useLocation, useNavigate, Navigate } from 'react-router-dom';
-import Home from './pages/Home';
-import Dashboard from './pages/Dashboard';
-import WizardPage from './pages/WizardPage';
-import AuditPage from './pages/AuditPage';
-import PricingPage from './pages/PricingPage';
-import AdminPage from './pages/AdminPage';
-import LoginPage from './pages/LoginPage';
-import { supabase } from './services/supabaseClient';
+import Home from '.Home';
+import Dashboard from '.Dashboard';
+import WizardPage from '.WizardPage';
+import AuditPage from '.AuditPage';
+import PricingPage from '.PricingPage';
+import AdminPage from '.AdminPage';
+import LoginPage from '.LoginPage';
+import { supabase } from '.supabaseClient';
 
 // Domain Types for Agile Routing
 type DomainContext = 'LANDING' | 'APP' | 'ADMIN';
