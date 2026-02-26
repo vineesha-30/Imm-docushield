@@ -1,0 +1,29 @@
+steps:
+  # 1. Build the container image
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/docushield', '.']
+
+  # 2. Push the image to Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/docushield']
+
+  # 3. Deploy to Cloud Run
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args:
+      - 'run'
+      - 'deploy'
+      - 'docushield-prod'
+      - '--image'
+      - 'gcr.io/$PROJECT_ID/docushield'
+      - '--region'
+      - 'us-central1'
+      - '--platform'
+      - 'managed'
+      - '--allow-unauthenticated'
+      # Set your Gemini API Key here or link it from Secret Manager
+      - '--set-env-vars'
+      - 'API_KEY=YOUR_GEMINI_API_KEY_HERE'
+
+images:
+  - 'gcr.io/$PROJECT_ID/docushield'

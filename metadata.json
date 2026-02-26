@@ -1,0 +1,7 @@
+{
+  "name": "IMM DocuShield",
+  "description": "A personal document protection and verification platform for Canadian visa applicants. DocuShield audits your entire document package for accuracy, completeness, and consistency before you submit to IRCC.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
