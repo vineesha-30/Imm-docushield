@@ -8,7 +8,7 @@ import AuditPage from './AuditPage';
 import PricingPage from './PricingPage';
 import AdminPage from './AdminPage';
 import LoginPage from './LoginPage';
-import { supabase } from './services/supabaseClient';
+import { supabase } from './supabaseClient';
 // Domain Types for Agile Routing
 type DomainContext = 'LANDING' | 'APP' | 'ADMIN';
 
